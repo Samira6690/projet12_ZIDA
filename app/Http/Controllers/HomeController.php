@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
+use App\Http\Requests\AdStore;
+use App\Http\Requests\AdList;
+use App\Ad;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +24,31 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $ads = Ad::all();
+        return view('home' ,compact('ads'));
     }
+//     public function ajout()
+// {
+
+//     return redirect()->route('home');
+
+// }
 }
+
+
+
+
+
+
+
+
+
+    // $validated = $request->validated();
+
+    // $ad->title = $validated["title"];
+    // $ad->description = $validated["description"];
+    // $ad->price = $validated["price"];
+    // $ad->localisation = $validated["localisation"];
+
+
+

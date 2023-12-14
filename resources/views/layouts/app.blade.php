@@ -36,6 +36,10 @@
 <li class="nav-item">
     <a href="{{  route('ad.create') }}" class="nav-link">Ajouter une annonce</a>
 </li>
+<li class="nav-item">
+    <a href="{{route('welcome') }}" class="nav-link">Voir l annonce</a>
+
+</li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

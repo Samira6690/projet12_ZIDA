@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
 <h1>Déposer une annonce</h1>
+
 <hr>
 <form method="POST" action="{{ route('ad.store') }}">
     @csrf
@@ -35,7 +36,7 @@
     <span class="invalid-feedback">{{ $errors->first('price') }}</span>
     @endif
 </div>
-<button type="submit">Soumettre notre annonce</button>
+<button type="submit" class="btn btn-success">Soumettre notre annonce</button>
 </form>
 </div>
 @endsection

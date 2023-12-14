@@ -1,12 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Requests\AdStore;
+use App\Http\Requests\AdList;
 use App\Ad;
 class AdController extends Controller
 {
+ public function welcome()
+    {
+    $ads = Ad::all();
+       return view('welcome', compact('ads'));
+    }
     public function create()
     {
         return view("create");
@@ -24,6 +29,6 @@ class AdController extends Controller
 
     return redirect()->route('welcome')->with('succes','votre annonce a été postée');
 
-
 }
+
 }

@@ -11,14 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('welcome');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/', 'AdController@welcome')->name('welcome');
 Route::get('/annonce', 'AdController@create')->name('ad.create');
 Route::post('/annonce/create', 'AdController@store')->name('ad.store');
+// Route::get('/home', 'AdController@ajo')->name('home');
+/////////////
 
+Route::namespace('Admin')->group(function(){
+     Route::get('/admin/login', 'Auth\LoginController@showLoginform')->name('admin.login');
+     Route::post('/admin/login', 'Auth\LoginController@login');
+     Route::get('/admin/home', 'AdminController@index')->name('admin.home');
+});
